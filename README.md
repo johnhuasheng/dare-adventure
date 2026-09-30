@@ -8,9 +8,11 @@
 
 > 有些风景，只留给敢出发的人。每一种冒险，都有普通人也能迈出的第一步。
 
-**[查看项目源码](https://github.com/johnhuasheng/dare-adventure) · [下载完整项目](https://github.com/johnhuasheng/dare-adventure/archive/refs/heads/main.zip)**
+**[▶ 在线体验（点击直接打开，无需下载）](https://johnhuasheng.github.io/dare-adventure/)** · **[查看项目源码](https://github.com/johnhuasheng/dare-adventure)** · **[下载完整项目](https://github.com/johnhuasheng/dare-adventure/archive/refs/heads/main.zip)**
 
-**在线预览状态：** 目前尚未提供可访问的 GitHub Pages 预览链接。可以先下载项目，在电脑上打开；后续启用在线预览后，再补充实际网址。
+**在线预览：** [https://johnhuasheng.github.io/dare-adventure/](https://johnhuasheng.github.io/dare-adventure/)
+
+网页托管在 GitHub Pages 上，点开链接就能直接运行，不用下载、不用安装。推荐用电脑上的 Chrome 或 Edge 打开；手机也能浏览，但洞穴头灯、鼠标跟随等效果需要用鼠标体验。
 
 ## 作品预览
 
@@ -129,6 +131,10 @@
 当系统开启“减少动态效果”时，页面会减少部分动画，默认暂停视频，并关闭部分鼠标与粒子效果。`PAUSE` 按钮则可以在普通浏览模式下随时暂停视频。
 
 ## 下载与本地运行
+
+### 方法零：在线打开，不用下载
+
+直接访问 **[https://johnhuasheng.github.io/dare-adventure/](https://johnhuasheng.github.io/dare-adventure/)**。视频和照片会自动从网上加载，打开即可体验全部交互。想离线保存或修改代码，再用下面的方法下载。
 
 ### 方法一：下载 ZIP，直接打开
 
