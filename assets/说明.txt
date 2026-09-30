@@ -1,0 +1,6 @@
+这里存放网页用到的视频和照片。
+双击上一层的「下载素材.bat」即可自动下载到 videos 和 images 文件夹。
+没有下载时，网页会自动从网上加载同样的素材（需要联网）。
+
+视频：Pexels（Pexels License）和 Pixabay（Pixabay Content License），均可免费使用
+照片：Unsplash（Unsplash License，可免费使用）

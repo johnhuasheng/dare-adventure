@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DARE 敢于未知</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://videos.pexels.com">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@600;900&display=swap">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="ld-top"><span class="mark">DARE.<span>敢</span></span><span class="lab">Loading altitude</span></div>
+  <div>
+    <div class="ld-mid"><div class="ld-num"><span id="ldNum">0</span><small>%</small></div><div class="ld-say">Every summit<br>starts at zero.</div></div>
+    <div class="ld-bar"><i id="ldBar"></i></div>
+  </div>
+</div>
+<div class="grain" id="grain" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="ring" id="ring" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="mark" href="#top">DARE.<span>敢</span></a>
+  <nav class="nav" id="nav">
+    <a href="#dive">Dive</a><a href="#climb">Climb</a><a href="#glide">Glide</a><a href="#skydive">Skydive</a><a href="#alpine">Alpine</a>
+  </nav>
+  <div class="tb-r">
+    <button class="play" id="playBtn" type="button" aria-pressed="false">❚❚ PAUSE</button>
+    <div class="alt">ALT<b id="altNum">0 M</b></div>
+  </div>
+</header>
+
+<nav class="chdots" id="chdots" aria-label="章节导航"></nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top" data-alt="0">
+  <div class="stage">
+    <div class="bg" id="heroBg">
+      <img src="assets/images/hero.jpg" data-remote="https://images.unsplash.com/photo-1563442162585-fa1426255ea9?auto=format&fit=crop&w=2000&q=75" onerror="this.onerror=null;this.src=this.dataset.remote" alt="" fetchpriority="high">
+      <video id="heroVid" muted loop playsinline preload="auto" aria-label="滑雪者正面刻滑冲向镜头的动态画面"></video>
+    </div>
+    <div class="shade"></div>
+    <canvas id="snow" aria-hidden="true"></canvas>
+
+    <div class="layer" id="L1">
+      <div class="word w1"><span class="ln"><span>DARE</span></span></div>
+      <div class="w-cn w1-cn fade">敢于未知</div>
+      <div class="word w2"><span class="ln"><span>THE</span></span></div>
+      <div class="word w3"><span class="ln"><span>UNKNOWN</span></span></div>
+      <div class="stat s-top fade"><div class="n" data-count="8849" data-pre="+" data-suf="M">+8,849M</div><span class="lab">Everest · 珠峰海拔</span></div>
+      <p class="copy-l fade"><b>有些风景，只留给敢出发的人。</b><br>攀岩、雪山、滑翔、跳伞、深潜。每一种冒险都有普通人也能迈出的第一步。</p>
+    </div>
+
+    <div class="layer" id="L2">
+      <div class="stat left s-l fade"><div class="n" data-count="900" data-pre="+" data-suf="M">+900M</div><span class="lab">El Capitan · 酋长岩岩壁</span></div>
+      <div class="stat right s-r fade"><div class="n" data-count="4000" data-pre="+" data-suf="M">+4,000M</div><span class="lab">Exit altitude · 跳伞离机高度</span></div>
+    </div>
+
+    <div class="layer" id="L3">
+      <div class="modules">
+        <a class="mod i" href="#climb"><div class="lab">Layer 01</div><h3>VERTICAL<span>攀岩</span></h3><p>岩壁不会一次问你所有问题。下一个手点，下一个脚点，一次只解决一个动作。</p></a>
+        <a class="mod i" href="#glide"><div class="lab">Layer 02</div><h3>AIRBORNE<span>滑翔</span></h3><p>没有引擎，只借一股看不见的上升热气流，盘旋着飞到云底。</p></a>
+        <a class="mod i" href="#alpine"><div class="lab">Layer 03</div><h3>ALTITUDE<span>雪山</span></h3><p>把目标拆成营地。反复适应稀薄的空气，再等一个好天气冲顶。</p></a>
+      </div>
+    </div>
+
+    <div class="layer" id="L4">
+      <div class="base">
+        <div class="nums">
+          <div><div class="n">05</div><div class="lab">Adventures · 种冒险</div></div>
+          <div><div class="n">60s</div><div class="lab">Freefall · 自由落体</div></div>
+          <div><div class="n">2,500M</div><div class="lab">Cloudbase · 云底</div></div>
+          <div><div class="n">−30M</div><div class="lab">Depth · 进阶潜水深度</div></div>
+        </div>
+        <div class="base-row">
+          <div class="pills i">
+            <a class="pill" href="#dive">Dive<span>潜水</span></a><a class="pill" href="#climb">Climb<span>攀岩</span></a><a class="pill" href="#glide">Glide<span>滑翔</span></a><a class="pill" href="#skydive">Skydive<span>跳伞</span></a><a class="pill" href="#alpine">Alpine<span>雪山</span></a>
+          </div>
+          <p>从第一步到最后一座山顶，每一次向下滚动，都是一次新的出发。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rec fade" id="rec"><i></i><span class="lab">Live · 正面刻滑 Carving</span></div>
+    <div class="scroll-cue" id="cue"><span class="lab">Scroll</span><i></i></div>
+    <div class="dim-layer" id="heroDim"></div>
+  </div>
+</section>
+
+<!-- ================= REVEAL ================= -->
+<section class="reveal" id="reveal" data-alt="-120">
+  <div class="glow"></div>
+  <canvas id="revealCanvas" aria-label="移动鼠标，用头灯照亮漆黑的溶洞"></canvas>
+  <div class="rv-hud"><span class="lab">Cave · 洞穴探险</span><span class="lab">Depth <b>−120 M</b></span><span class="lab">Found <b id="rvFound">0</b> / 3</span></div>
+  <div class="rv-title">
+    <span class="a">Courage waits</span>
+    <span class="b">in the dark</span>
+    <span class="c">洞穴探险 · 勇气藏在未知里</span>
+  </div>
+  <div class="rv-tags" id="rvTags" aria-live="polite"></div>
+  <div class="rv-l"><p class="tiny" style="color:var(--white)">洞穴里没有日出。<br>头灯照到哪里，世界就延伸到哪里。</p></div>
+  <div class="rv-hint lab" id="rvHint">移动鼠标当头灯 · 按住放大光圈 · 找到 3 处秘密</div>
+  <div class="rv-r">
+    <p class="tiny">在地下，恐惧大多来自看不见。每照亮一块岩石，就多一分往前走的底气。</p>
+    <a class="btn" href="#dive">继续向前 <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<!-- ================= CHAPTERS ================= -->
+<main id="chapters"></main>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<!-- ================= FIRST STEP ================= -->
+<section class="first" id="first" data-alt="8848.86">
+  <div class="first-head">
+    <span class="a">Where will you</span>
+    <span class="b">begin?</span>
+    <p>选一种冒险，看看普通人从哪里开始。没有人的第一座山是珠峰。</p>
+  </div>
+  <div class="picker" id="picker" role="group" aria-label="选择冒险"></div>
+  <div class="plan" id="plan"></div>
+</section>
+
+<footer>
+  <div>
+    <p class="quote" id="quote"></p>
+    <p class="quote-cn" id="quoteCn"></p>
+  </div>
+  <div class="foot-r">
+    安全提示：潜水、攀岩、滑翔伞、跳伞与高山攀登均属高风险运动，请在有资质的教练或向导指导下进行。敢于出发，也敢于在该回头的时候回头。<br><br>
+    视频来自 Pexels，照片来自 Unsplash · DARE 敢于未知 · 2026<br>
+    <a class="to-top" href="#top">回到顶部 ↑</a>
+  </div>
+</footer>
+
+<script src="js/lenis.min.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
